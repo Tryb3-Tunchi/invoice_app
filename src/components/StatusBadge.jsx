@@ -1,0 +1,13 @@
+import styles from "./StatusBadge.module.css";
+
+export default function StatusBadge({ status }) {
+  return (
+    <span
+      className={`${styles.badge} ${styles[status]}`}
+      aria-label={`Status: ${status}`}
+    >
+      <span className={styles.dot} aria-hidden="true" />
+      {status.charAt(0).toUpperCase() + status.slice(1)}
+    </span>
+  );
+}

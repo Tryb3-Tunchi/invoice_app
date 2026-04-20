@@ -1,0 +1,22 @@
+.layout {
+  display: flex;
+  height: 100vh;
+  background-color: var(--surface-1, #141625);
+}
+
+.main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem;
+  background-color: var(--surface-1, #141625);
+}
+
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .main {
+    padding: 1.5rem;
+  }
+}

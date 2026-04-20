@@ -1,0 +1,396 @@
+.page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  animation: slideUp 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: none;
+  border: none;
+  color: var(--text-1);
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  transition: color 0.2s;
+}
+.backBtn:hover {
+  color: var(--text-3);
+}
+
+/* Status bar */
+.statusBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.statusLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.statusLabel {
+  font-size: 0.8rem;
+  color: var(--text-3);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.editBtn,
+.deleteBtn,
+.paidBtn {
+  padding: 14px 24px;
+  border-radius: 24px;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 700;
+  transition:
+    background 0.2s,
+    transform 0.1s;
+}
+.editBtn:active,
+.deleteBtn:active,
+.paidBtn:active {
+  transform: scale(0.97);
+}
+
+.editBtn {
+  background: var(--surface-2);
+  color: var(--text-4);
+}
+.editBtn:hover {
+  background: var(--surface-3);
+  color: var(--text-1);
+}
+
+.deleteBtn {
+  background: #ec5757;
+  color: white;
+}
+.deleteBtn:hover {
+  background: #ff7979;
+}
+
+.paidBtn {
+  background: var(--purple);
+  color: white;
+}
+.paidBtn:hover {
+  background: var(--purple-2);
+}
+
+/* Card */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.invoiceId {
+  font-family: "Syne", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-1);
+  margin-bottom: 4px;
+}
+.hash {
+  color: var(--text-4);
+}
+
+.description {
+  font-size: 0.8rem;
+  color: var(--text-3);
+}
+
+.senderAddr {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.8rem;
+  color: var(--text-3);
+  font-style: normal;
+  text-align: right;
+}
+
+/* Meta grid */
+.metaGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.metaGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.metaLabel {
+  font-size: 0.8rem;
+  color: var(--text-3);
+}
+
+.metaValue {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-1);
+}
+
+.clientAddr {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.8rem;
+  color: var(--text-3);
+  font-style: normal;
+  margin-top: 4px;
+}
+
+/* Items table */
+.itemsWrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.itemsTable {
+  background: var(--surface-2);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tableHead {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  gap: 16px;
+  font-size: 0.8rem;
+  color: var(--text-3);
+  font-weight: 500;
+}
+.tableHead span:not(:first-child) {
+  text-align: right;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  gap: 16px;
+  align-items: center;
+}
+
+.itemName {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-1);
+}
+.itemQty,
+.itemPrice {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-3);
+  text-align: right;
+}
+.itemTotal {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-1);
+  text-align: right;
+}
+
+.totalBar {
+  background: var(--bg-4, #0c0e1a);
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-2);
+  font-size: 0.8rem;
+}
+
+[data-theme="light"] .totalBar {
+  background: #373b53;
+  color: white;
+}
+
+.grandTotal {
+  font-family: "Syne", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+}
+
+/* Modal */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: grid;
+  place-items: center;
+  z-index: 200;
+  padding: 24px;
+  animation: fadeIn 0.15s ease both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  max-width: 420px;
+  width: 100%;
+  animation: scaleIn 0.15s ease both;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modalTitle {
+  font-family: "Syne", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-1);
+  margin-bottom: 12px;
+}
+
+.modalText {
+  font-size: 0.875rem;
+  color: var(--text-3);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.modalActions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.cancelBtn {
+  padding: 14px 24px;
+  border-radius: 24px;
+  border: none;
+  background: var(--surface-2);
+  color: var(--text-4);
+  font-size: 0.875rem;
+  font-weight: 700;
+  transition: background 0.2s;
+}
+.cancelBtn:hover {
+  background: var(--surface-3);
+  color: var(--text-1);
+}
+
+.deleteConfirmBtn {
+  padding: 14px 24px;
+  border-radius: 24px;
+  border: none;
+  background: #ec5757;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 700;
+  transition: background 0.2s;
+}
+.deleteConfirmBtn:hover {
+  background: #ff7979;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .page {
+    padding: 24px 16px;
+  }
+  .card {
+    padding: 24px;
+    gap: 24px;
+  }
+  .metaGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .senderAddr {
+    text-align: left;
+  }
+  .tableHead {
+    display: none;
+  }
+  .tableRow {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+  .itemName {
+    grid-column: 1 / -1;
+  }
+  .itemQty {
+    text-align: left;
+  }
+  .itemTotal {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .actions {
+    justify-content: center;
+    width: 100%;
+  }
+  .statusBar {
+    flex-direction: column;
+    text-align: center;
+  }
+  .statusLeft {
+    justify-content: center;
+  }
+}
