@@ -15,6 +15,12 @@ export default function InvoiceDetail({ invoiceId, onBack, onEdit }) {
     deleteInvoice(invoice.id);
     onBack();
   }
+  
+  function handleDeleteModalKeyDown(e) {
+    if (e.key === "Escape") {
+      setShowDeleteModal(false);
+    }
+  }
 
   return (
     <div className={styles.page}>
@@ -160,6 +166,7 @@ export default function InvoiceDetail({ invoiceId, onBack, onEdit }) {
           onClick={(e) =>
             e.target === e.currentTarget && setShowDeleteModal(false)
           }
+          onKeyDown={handleDeleteModalKeyDown}
         >
           <div className={styles.modal}>
             <h2 id="delete-title" className={styles.modalTitle}>

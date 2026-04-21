@@ -4,7 +4,7 @@
   top: 0;
   bottom: 0;
   width: 72px;
-  background: #1e2139;
+  background: var(--surface);
   border-radius: 0 20px 20px 0;
   display: flex;
   flex-direction: column;
@@ -12,6 +12,7 @@
   justify-content: space-between;
   z-index: 100;
   overflow: hidden;
+  transition: background 0.3s ease;
 }
 
 .logo {
@@ -67,23 +68,31 @@
 .themeBtn {
   background: none;
   border: none;
-  color: #858bb2;
+  color: var(--text-3);
   padding: 16px;
-  transition: color 0.2s;
+  transition: color 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
 }
 
 .themeBtn:hover {
-  color: #dfe3fa;
+  color: var(--text-1);
+}
+
+.themeBtn:focus-visible {
+  outline: 2px solid #7c5dfa;
+  outline-offset: 2px;
 }
 
 .divider {
   width: 100%;
   height: 1px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--border);
   margin: 8px 0;
+  transition: background 0.3s ease;
 }
 
 .avatar {
@@ -91,17 +100,20 @@
   height: 36px;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid var(--border-2);
+  transition: border-color 0.3s ease;
 }
+
 .avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Tablet+ goes horizontal at top */
-@media (min-width: 768px) {
+/* Tablet: Horizontal layout */
+@media (max-width: 767px) {
   .sidebar {
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -109,14 +121,14 @@
     width: auto;
     height: 80px;
     flex-direction: row;
-    border-radius: 0 0 20px 0;
     border-radius: 0;
+    z-index: 101;
   }
 
   .logo {
     width: 80px;
     height: 80px;
-    border-radius: 0 20px 20px 0;
+    border-radius: 0;
   }
 
   .bottom {
@@ -134,27 +146,70 @@
   }
 }
 
+/* Tablet (768+): Horizontal layout */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    width: auto;
+    height: 80px;
+    flex-direction: row;
+    border-radius: 0;
+    z-index: 101;
+  }
+
+  .logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 0;
+  }
+
+  .bottom {
+    flex-direction: row;
+    padding-bottom: 0;
+    padding-right: 24px;
+    gap: 8px;
+    width: auto;
+  }
+
+  .divider {
+    width: 1px;
+    height: 40px;
+    margin: 0 8px;
+  }
+}
+
+/* Desktop (1024+): Vertical layout on left */
 @media (min-width: 1024px) {
   .sidebar {
+    position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
     right: auto;
     width: 88px;
-    height: auto;
+    height: 100vh;
     flex-direction: column;
     border-radius: 0 20px 20px 0;
+    z-index: 100;
   }
+
   .logo {
     width: 88px;
     height: 88px;
+    border-radius: 0 20px 20px 0;
   }
+
   .bottom {
     flex-direction: column;
     padding-bottom: 32px;
     padding-right: 0;
     width: 100%;
   }
+
   .divider {
     width: 100%;
     height: 1px;

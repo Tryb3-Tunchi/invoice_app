@@ -1,22 +1,54 @@
 .layout {
   display: flex;
   height: 100vh;
-  background-color: var(--surface-1, #141625);
+  background-color: var(--bg);
+  flex-direction: column;
 }
 
 .main {
   flex: 1;
   overflow-y: auto;
+  overflow-x: hidden;
   padding: 2rem;
-  background-color: var(--surface-1, #141625);
+  background-color: var(--bg);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 80px;
 }
 
-@media (max-width: 768px) {
+/* Mobile: Sidebar at top */
+@media (max-width: 767px) {
   .layout {
     flex-direction: column;
   }
 
   .main {
-    padding: 1.5rem;
+    padding: 1.5rem 1rem;
+    margin-top: 80px;
+    padding-top: 1rem;
+  }
+}
+
+/* Tablet: Sidebar horizontal at top */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .main {
+    padding: 1.75rem;
+    margin-top: 80px;
+  }
+}
+
+/* Desktop: Sidebar on left */
+@media (min-width: 1024px) {
+  .layout {
+    flex-direction: row;
+  }
+
+  .main {
+    padding: 2rem;
+    margin-top: 0;
+    margin-left: 88px;
   }
 }
