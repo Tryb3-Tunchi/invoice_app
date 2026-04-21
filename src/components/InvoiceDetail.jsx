@@ -15,7 +15,7 @@ export default function InvoiceDetail({ invoiceId, onBack, onEdit }) {
     deleteInvoice(invoice.id);
     onBack();
   }
-  
+
   function handleDeleteModalKeyDown(e) {
     if (e.key === "Escape") {
       setShowDeleteModal(false);

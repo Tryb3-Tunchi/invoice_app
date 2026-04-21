@@ -34,20 +34,20 @@ export default function InvoiceForm({ invoiceId, onClose }) {
   useEffect(() => {
     firstInputRef.current?.focus();
     const modal = document.querySelector('[role="dialog"]');
-    
+
     const onKey = (e) => {
       if (e.key === "Escape") onClose();
-      
+
       // Tab trap inside modal
       if (e.key === "Tab" && modal) {
         const focusableElements = modal.querySelectorAll(
-          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
         );
         if (focusableElements.length === 0) return;
-        
+
         const firstElement = focusableElements[0];
         const lastElement = focusableElements[focusableElements.length - 1];
-        
+
         if (e.shiftKey) {
           if (document.activeElement === firstElement) {
             e.preventDefault();
@@ -61,7 +61,7 @@ export default function InvoiceForm({ invoiceId, onClose }) {
         }
       }
     };
-    
+
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);

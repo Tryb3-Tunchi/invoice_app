@@ -101,7 +101,9 @@
   font-size: 1rem;
   font-weight: 700;
   outline: none;
-  transition: border-color 0.2s, background 0.2s;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
 }
 
 .input:focus,
