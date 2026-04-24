@@ -9,7 +9,7 @@ export default function Sidebar() {
     <aside className={styles.sidebar} aria-label="Application sidebar">
       {/* Logo */}
       <div className={styles.logo} aria-label="Invoice app logo">
-        <img src={logo} alt="Invoice app logo" width="48" height="48" />
+        <img src={logo} alt="Invoice app logo" width="80" height="80" />
       </div>
 
       <div className={styles.bottom}>
