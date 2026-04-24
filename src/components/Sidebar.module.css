@@ -18,24 +18,12 @@
 .logo {
   width: 72px;
   height: 72px;
-  background: #7c5dfa;
   display: grid;
   place-items: center;
   border-radius: 0 20px 20px 0;
   flex-shrink: 0;
   position: relative;
   overflow: hidden;
-}
-
-.logo::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  background: #9277ff;
-  border-radius: 20px 0 0 0;
 }
 
 .logoOuter {
