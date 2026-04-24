@@ -1,5 +1,6 @@
 import { useApp } from '../context/AppContext'
 import styles from './Sidebar.module.css'
+import logo from '../assets/Group 9.png'
 
 export default function Sidebar() {
   const { theme, toggleTheme } = useApp()
@@ -8,9 +9,7 @@ export default function Sidebar() {
     <aside className={styles.sidebar} aria-label="Application sidebar">
       {/* Logo */}
       <div className={styles.logo} aria-label="Invoice app logo">
-        <div className={styles.logoOuter}>
-          <div className={styles.logoInner} />
-        </div>
+        <img src={logo} alt="Invoice app logo" width="48" height="48" />
       </div>
 
       <div className={styles.bottom}>
